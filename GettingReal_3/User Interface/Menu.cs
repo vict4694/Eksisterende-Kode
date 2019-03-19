@@ -20,67 +20,71 @@ namespace GettingReal_3
         public void Show()
 
         {
-            Console.WriteLine("--------------------------------");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(@"   _    _  ____  _   _  _   _");
-            Console.WriteLine(@"  |  \/  || ___|| \ | || | | |");
-            Console.WriteLine(@"  |      || |_ ||  \| || | | |");
-            Console.WriteLine(@"  | |\/| ||  _|||     || | | |");
-            Console.WriteLine(@"  | |  | || |__|| |\  || |_| |");
-            Console.WriteLine(@"  |_|  |_||____||_| \_|\_____/");
-
-            Console.ResetColor();
-            Console.WriteLine("--------------------------------");
-            Console.WriteLine("\n--------------------------------");
-
-            Console.WriteLine("Vælg punkt mellem 1-4");
-            Console.WriteLine("1: Registrér timer");
-            Console.WriteLine("2: Se dine afsluttede vagter");
-            Console.WriteLine("3: Administration");
-            Console.WriteLine("4: Luk ned");
-
-            Console.WriteLine("--------------------------------");
-
-            int switchCase = Convert.ToInt32(Console.ReadLine());
-            switch (switchCase)
+            bool active = true;
+            do
             {
-                case 1:
+                Console.WriteLine("--------------------------------");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(@"   _    _  ____  _   _  _   _");
+                Console.WriteLine(@"  |  \/  || ___|| \ | || | | |");
+                Console.WriteLine(@"  |      || |_ ||  \| || | | |");
+                Console.WriteLine(@"  | |\/| ||  _|||     || | | |");
+                Console.WriteLine(@"  | |  | || |__|| |\  || |_| |");
+                Console.WriteLine(@"  |_|  |_||____||_| \_|\_____/");
 
-                    Console.WriteLine("Registrer Timer ");
-                    RegisterHoursMenu();
-                    break;
+                Console.ResetColor();
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine("\n--------------------------------");
 
-                case 2:
-                    Console.Clear();
-                    Console.WriteLine("Se afsluttede vagter for denne måned");
-                    EndedShifts();
-                    break;
+                Console.WriteLine("Vælg punkt mellem 1-4");
+                Console.WriteLine("1: Registrér timer");
+                Console.WriteLine("2: Se dine afsluttede vagter");
+                Console.WriteLine("3: Administration");
+                Console.WriteLine("4: Luk ned");
 
-                case 3:
-                    Console.Clear();
-                    Console.WriteLine("Administration");
-                    Console.WriteLine("Indtast administratorkode: ");
+                Console.WriteLine("--------------------------------");
 
-                    AdminPass();
+                int switchCase = Convert.ToInt32(Console.ReadLine());
+                switch (switchCase)
+                {
+                    case 1:
 
-                    Console.Clear();
+                        Console.WriteLine("Registrer Timer ");
+                        RegisterHoursMenu();
+                        break;
 
-                    Console.WriteLine("Vælg mellem 1-5");
-                    Console.WriteLine("1. Eksportér liste til Excel");
-                    Console.WriteLine("2. Tilføj medarbejder");
-                    Console.WriteLine("3. Slet medarbejder");
-                    Console.WriteLine("4. Planlæg ny vagt");
-                    Console.WriteLine("5. Luk ned");
+                    case 2:
+                        Console.Clear();
+                        Console.WriteLine("Se afsluttede vagter for denne måned");
+                        EndedShifts();
+                        break;
 
-                    Administration();
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine("Administration");
+                        Console.WriteLine("Indtast administratorkode: ");
 
-                    break;
+                        AdminPass();
 
-                case 4:
-                    Environment.Exit(0);
+                        Console.Clear();
 
-                    break;
-            }
+                        Console.WriteLine("Vælg mellem 1-5");
+                        Console.WriteLine("1. Eksportér liste til Excel");
+                        Console.WriteLine("2. Tilføj medarbejder");
+                        Console.WriteLine("3. Slet medarbejder");
+                        Console.WriteLine("4. Planlæg ny vagt");
+                        Console.WriteLine("5. Luk ned");
+
+                        Administration();
+
+                        break;
+
+                    case 4:
+                        Environment.Exit(0);
+
+                        break;
+                }
+            } while (active);
         }
         public void RegisterHoursMenu()
         {
