@@ -8,7 +8,9 @@ namespace GettingReal_3
 {
     public class EmployeeRepository
     {
+        AdminEmployeeRepo admEmp = new AdminEmployeeRepo();
         SQL sql = new SQL();
+        Shift shift = new Shift();
 
 
         public void AddEmployee()
@@ -31,6 +33,43 @@ namespace GettingReal_3
 
             Console.WriteLine("Medarbejder er nu blevet slettet");
             Console.ReadKey();
+        }
+        public void RegisterHoursMenu()
+        {
+            Console.Clear();
+
+            Console.Write("Indtast navn: ");
+            string input = Console.ReadLine();
+
+            while (sql.CheckEmployee(input) == null)
+            {
+                Console.Clear();
+                Console.WriteLine("Du har intastet forkert navn, prøv igen: ");
+                input = Console.ReadLine();
+            }
+
+            Console.Clear();
+            Console.WriteLine("Du har valgt: " + input);
+            Console.WriteLine("Butikker: ");
+
+            shift.AddStore();
+            shift.ShowStores();
+
+            Console.WriteLine("skriv butik navn: ");
+            string butikInput = Console.ReadLine();
+
+            while (shift.CheckStore(butikInput) == null)
+            {
+                Console.WriteLine("Du har intastet forkert butik navn, prøv igen: ");
+                butikInput = Console.ReadLine();
+            }
+            shift.CheckStore(butikInput).StoreName = butikInput;
+
+            Console.Clear();
+            Console.WriteLine("du har valgt " + butikInput + "-butikken");
+
+
+            admEmp.RegisterHours(sql.CheckEmployee(input), shift.CheckStore(butikInput));
         }
     }
 }

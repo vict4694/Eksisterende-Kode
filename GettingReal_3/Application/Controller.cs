@@ -10,8 +10,8 @@ namespace GettingReal_3
     {
         public void RegisterHoursMenu()
         {
-             AdminEmployeeRepo empr = new AdminEmployeeRepo();
-            empr.RegisterHours();
+             EmployeeRepository empr = new EmployeeRepository();
+            empr.RegisterHoursMenu();
         }
     }
 }

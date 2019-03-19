@@ -8,24 +8,11 @@ namespace GettingReal_3
 {
     public class AdminEmployeeRepo
     {
-        Store s = new Store();
-        Employee e = new Employee();
         Shift shift = new Shift();
         SQL sql = new SQL();
-        public void RegisterHours()
+        public void RegisterHours(Employee e, Store s)
         {
-            SQL dataBase = new SQL();
             Console.Clear();
-
-            Console.Write("Indtast navn: ");
-            string input = Console.ReadLine();
-
-            while (dataBase.CheckEmployee(input) == null)
-            {
-                Console.Clear();
-                Console.WriteLine("Du har intastet forkert navn, prøv igen: ");
-                input = Console.ReadLine();
-            }
 
             Console.WriteLine("intast morgen eller aften: ");
             string morgenAften = Console.ReadLine();
@@ -89,7 +76,6 @@ namespace GettingReal_3
 
             //insætter til sql:
             sql.InsertToShift(s.StoreName, shift.Day, morgenAften, e.EmployeeName, shift.StartTime, shift.EndTime, e.TotalHoursToDouble());
-
         }
         public StringBuilder InputDateTime(string startString, char ignoreChar, string message)
         {
