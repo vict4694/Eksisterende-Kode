@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Admin.cs" />
-    <Compile Include="Application\AdminEmployee.cs" />
+    <Compile Include="Application\AdminEmployeeRepo.cs" />
     <Compile Include="Application\Controller.cs" />
     <Compile Include="Domain\Employee.cs" />
     <Compile Include="Application\EmployeeRepository.cs" />

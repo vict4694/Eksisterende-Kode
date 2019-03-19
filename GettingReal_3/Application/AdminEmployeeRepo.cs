@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 
 namespace GettingReal_3
 {
-    public class AdminEmployee
+    public class AdminEmployeeRepo
     {
+        Store s = new Store();
+        Employee e = new Employee();
         Shift shift = new Shift();
         SQL sql = new SQL();
-        public void RegisterHours(Employee e, Store s)
+        public void RegisterHours()
         {
+            SQL dataBase = new SQL();
+            Console.Clear();
+
+            Console.Write("Indtast navn: ");
+            string input = Console.ReadLine();
+
+            while (dataBase.CheckEmployee(input) == null)
+            {
+                Console.Clear();
+                Console.WriteLine("Du har intastet forkert navn, prøv igen: ");
+                input = Console.ReadLine();
+            }
 
             Console.WriteLine("intast morgen eller aften: ");
             string morgenAften = Console.ReadLine();

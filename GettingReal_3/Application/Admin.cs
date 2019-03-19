@@ -11,7 +11,7 @@ namespace GettingReal_3
         EmployeeRepository RepoEmp = new EmployeeRepository();
         SQL sql = new SQL();
         Shift shift = new Shift();
-        AdminEmployee adminEmp = new AdminEmployee();
+        AdminEmployeeRepo adminEmp = new AdminEmployeeRepo();
         Employee e = new Employee();
         public void AddEmployee()
         {

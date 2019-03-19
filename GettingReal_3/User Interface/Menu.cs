@@ -10,7 +10,7 @@ namespace GettingReal_3
     public class Menu
     {
         Admin admin = new Admin();
-        AdminEmployee admEmp = new AdminEmployee();
+        AdminEmployeeRepo admEmp = new AdminEmployeeRepo();
         Shift shift = new Shift();
         Store store = new Store();
         EmployeeRepository empRepo = new EmployeeRepository();

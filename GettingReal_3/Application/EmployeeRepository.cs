@@ -32,21 +32,5 @@ namespace GettingReal_3
             Console.WriteLine("Medarbejder er nu blevet slettet");
             Console.ReadKey();
         }
-        public void RegisterHours()
-        {
-            SQL dataBase = new SQL();
-            Console.Clear();
-
-            Console.Write("Indtast navn: ");
-            string input = Console.ReadLine();
-
-            while (dataBase.CheckEmployee(input) == null)
-            {
-                Console.Clear();
-                Console.WriteLine("Du har intastet forkert navn, prøv igen: ");
-                input = Console.ReadLine();
-            }
-        }
-
     }
 }
