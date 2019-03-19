@@ -8,6 +8,10 @@ namespace GettingReal_3
 {
     public class Controller
     {
-
+        public void RegisterHoursMenu()
+        {
+            EmployeeRepository empr = new EmployeeRepository();
+            empr.RegisterHours();
+        }
     }
 }

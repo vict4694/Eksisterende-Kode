@@ -16,6 +16,7 @@ namespace GettingReal_3
         EmployeeRepository empRepo = new EmployeeRepository();
         SQL dataBase = new SQL();
         Program program = new Program();
+        Controller control = new Controller();
 
         public void Show()
 
@@ -49,8 +50,9 @@ namespace GettingReal_3
                 {
                     case 1:
 
-                        Console.WriteLine("Registrer Timer ");
-                        RegisterHoursMenu();
+                        Console.Clear();
+                        control.RegisterHoursMenu();
+                        Console.ReadLine();
                         break;
 
                     case 2:
@@ -86,43 +88,43 @@ namespace GettingReal_3
                 }
             } while (active);
         }
-        public void RegisterHoursMenu()
-        {
-            Console.Clear();
+        //public void RegisterHoursMenu()
+        //{
+        //    Console.Clear();
 
-            Console.Write("Indtast navn: ");
-            string input = Console.ReadLine();
+        //    Console.Write("Indtast navn: ");
+        //    string input = Console.ReadLine();
 
-            while (dataBase.CheckEmployee(input) == null)
-            {
-                Console.Clear();
-                Console.WriteLine("Du har intastet forkert navn, prøv igen: ");
-                input = Console.ReadLine();
-            }
+        //    while (dataBase.CheckEmployee(input) == null)
+        //    {
+        //        Console.Clear();
+        //        Console.WriteLine("Du har intastet forkert navn, prøv igen: ");
+        //        input = Console.ReadLine();
+        //    }
 
-            Console.Clear();
-            Console.WriteLine("Du har valgt: " + input);
-            Console.WriteLine("Butikker: ");
+        //    Console.Clear();
+        //    Console.WriteLine("Du har valgt: " + input);
+        //    Console.WriteLine("Butikker: ");
 
-            shift.AddStore();
-            shift.ShowStores();
+        //    shift.AddStore();
+        //    shift.ShowStores();
 
-            Console.WriteLine("skriv butik navn: ");
-            string butikInput = Console.ReadLine();
+        //    Console.WriteLine("skriv butik navn: ");
+        //    string butikInput = Console.ReadLine();
             
-            while (shift.CheckStore(butikInput) == null)
-            {
-                Console.WriteLine("Du har intastet forkert butik navn, prøv igen: ");
-                butikInput = Console.ReadLine();
-            }
-            shift.CheckStore(butikInput).StoreName = butikInput;
+        //    while (shift.CheckStore(butikInput) == null)
+        //    {
+        //        Console.WriteLine("Du har intastet forkert butik navn, prøv igen: ");
+        //        butikInput = Console.ReadLine();
+        //    }
+        //    shift.CheckStore(butikInput).StoreName = butikInput;
 
-            Console.Clear();
-            Console.WriteLine("du har valgt " + butikInput + "-butikken");
+        //    Console.Clear();
+        //    Console.WriteLine("du har valgt " + butikInput + "-butikken");
 
 
-            admEmp.RegisterHours(dataBase.CheckEmployee(input), shift.CheckStore(butikInput));
-        }
+        //    admEmp.RegisterHours(dataBase.CheckEmployee(input), shift.CheckStore(butikInput));
+        //}
 
         public void EndedShifts()
         {
