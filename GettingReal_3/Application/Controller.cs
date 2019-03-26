@@ -23,5 +23,15 @@ namespace GettingReal_3
             Admin admin = new Admin();
             admin.PlanShift();
         }
+        public void AddEmployee1()
+        {
+            Admin admin = new Admin();
+            admin.AddEmployee();
+        }
+        public void RemoveEmployee1()
+        {
+            Admin admin = new Admin();
+            admin.RemoveEmployee();
+        }
     }
 }

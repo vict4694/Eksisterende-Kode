@@ -9,11 +9,6 @@ namespace GettingReal_3
     
     public class Menu
     {
-        Admin admin = new Admin();
-        AdminEmployeeRepo admEmp = new AdminEmployeeRepo();
-        Shift shift = new Shift();
-        Store store = new Store();
-        EmployeeRepository empRepo = new EmployeeRepository();
         SQL dataBase = new SQL();
         Program program = new Program();
         Controller control = new Controller();
@@ -103,14 +98,14 @@ namespace GettingReal_3
                 case 2:
                     Console.WriteLine("3. Tilføj medarbejder");
 
-                    admin.AddEmployee();
+                    control.AddEmployee1();
                     GoBack();
                     break;
 
                 case 3:
                     Console.WriteLine("4. Slet medarbejder");
 
-                    admin.RemoveEmployee();
+                    control.RemoveEmployee1();
                     GoBack();
 
                     break;
