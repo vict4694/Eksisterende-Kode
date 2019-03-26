@@ -13,5 +13,15 @@ namespace GettingReal_3
              EmployeeRepository empr = new EmployeeRepository();
             empr.RegisterHoursMenu();
         }
+        public void EndedShifts()
+        {
+            AdminEmployeeRepo admEmp = new AdminEmployeeRepo();
+            admEmp.EndedShifts();
+        }
+        public void PlanShift()
+        {
+            Admin admin = new Admin();
+            admin.PlanShift();
+        }
     }
 }

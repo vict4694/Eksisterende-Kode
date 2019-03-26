@@ -58,7 +58,7 @@ namespace GettingReal_3
                     case 2:
                         Console.Clear();
                         Console.WriteLine("Se afsluttede vagter for denne måned");
-                        EndedShifts();
+                        control.EndedShifts();
                         break;
 
                     case 3:
@@ -89,11 +89,6 @@ namespace GettingReal_3
             } while (active);
         }
 
-        public void EndedShifts()
-        {
-            admEmp.EndedShifts();
-        }
-
         public void Administration()
         {
             int s = Convert.ToInt32(Console.ReadLine());
@@ -121,7 +116,7 @@ namespace GettingReal_3
                     break;
                 case 4:
                     Console.WriteLine("5. Planlæg ny vagt");
-                    PlanShift();
+                    control.PlanShift();
                     break;
 
                 case 5:
@@ -129,10 +124,6 @@ namespace GettingReal_3
                     Environment.Exit(0);
                     break;
             }
-        }
-        public void PlanShift()
-        {
-            admin.PlanShift();
         }
 
         public void AdminPass()
