@@ -38,6 +38,7 @@ namespace GettingReal_3
         {
             Console.Clear();
 
+
             Console.Write("Indtast navn: ");
             string input = Console.ReadLine();
 
@@ -46,6 +47,7 @@ namespace GettingReal_3
                 Console.Clear();
                 Console.WriteLine("Du har intastet forkert navn, prøv igen: ");
                 input = Console.ReadLine();
+
             }
 
             Console.Clear();

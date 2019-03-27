@@ -77,20 +77,22 @@ namespace GettingReal_3
                     string Medarbejder = checkEmployee.ExecuteScalar()?.ToString();
                     string lower = Medarbejder.ToLower();
                     string inputToLower = employeeName.ToLower();
-                    
+
                     if (lower == inputToLower)
                     {
                         empl.EmployeeName = employeeName;
                         return empl;
                     }
+
                     else
                     {
                         return null;
                     }
                 }
-                catch (SqlException p)
+
+                catch (Exception)
                 {
-                    Console.WriteLine("Puha" + p.Message);
+
                     return null;
                 }
             }
@@ -146,7 +148,7 @@ namespace GettingReal_3
                 {
                     Console.WriteLine("PlanShift virker ikke" + e.Message);
                 }
-                
+
             }
         }
 
@@ -161,7 +163,7 @@ namespace GettingReal_3
                     {
                         Console.WriteLine("ButikNavn" + GetNumberOfSpaces("ButikNavn") + "Dato" + GetNumberOfSpaces("Dato") +
                             "Morgen/Aften" + GetNumberOfSpaces("Morgen/Aften") +
-                            "Medarbejder" + GetNumberOfSpaces("Medarbejder") + "Start Tid" + 
+                            "Medarbejder" + GetNumberOfSpaces("Medarbejder") + "Start Tid" +
                             GetNumberOfSpaces("Start tid") + "SlutTid" + GetNumberOfSpaces("SlutTid") + "antal TImer\n");
 
                         while (reader.Read())
@@ -173,12 +175,12 @@ namespace GettingReal_3
                             string StartTid = reader["StartTid"].ToString();
                             string SlutTid = reader["SlutTid"].ToString();
                             string AntalTimer = reader["AntalTimer"].ToString();
-                            
-                            
-                            Console.WriteLine(Butiknavn + GetNumberOfSpaces(Butiknavn) + Dato + GetNumberOfSpaces(Dato) + MorgenAften 
-                                + GetNumberOfSpaces(MorgenAften) + Medarbejder + GetNumberOfSpaces(Medarbejder) + StartTid + 
+
+
+                            Console.WriteLine(Butiknavn + GetNumberOfSpaces(Butiknavn) + Dato + GetNumberOfSpaces(Dato) + MorgenAften
+                                + GetNumberOfSpaces(MorgenAften) + Medarbejder + GetNumberOfSpaces(Medarbejder) + StartTid +
                                 GetNumberOfSpaces(StartTid) + SlutTid + GetNumberOfSpaces(SlutTid) + AntalTimer);
-                            
+
 
                         }
                     }
@@ -242,6 +244,6 @@ namespace GettingReal_3
             return spaces;
         }
 
-        
+
     }
 }
